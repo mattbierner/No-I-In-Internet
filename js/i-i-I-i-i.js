@@ -5,7 +5,7 @@ var delimiter = "$$$";
 module.exports = function(goodWords, input) {
     return input
         .replace(
-            new RegExp('\\b(' + goodWords.join('|') + ')\\b', 'gi'),
+            new RegExp('\\b(' + goodWords.sort().reverse().join('|') + ')\\b', 'gi'),
             function(goodWord) {
                 return delimiter + goodWord + delimiter;
             })
