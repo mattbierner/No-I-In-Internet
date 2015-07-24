@@ -56,3 +56,8 @@ exports.special_word = function(test) {
     test.equal("my ___ my", iiIii(['my'], "my xmy my"));
     test.done();
 };
+
+exports.special_word_with_spaces = function(test) {
+    test.equal("__ i self __", iiIii(['i self'], "my i self my"));
+    test.done();
+};

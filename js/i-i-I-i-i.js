@@ -7,8 +7,11 @@ var contains = function(array, element) {
 /**
 */
 module.exports = function(goodWords, input) {
-    goodWords = goodWords.map(toLowerCase);
-    return input.replace(/(\w)+/g, function(word) {
+    var z = goodWords.length ?
+        new RegExp('\\b((?!(' + goodWords.join('|') + ')\\b)\\w+)', "gi") :
+        /\w+/g;
+    console.log(z);
+    return input.replace(z, function(word) {
         if (contains(goodWords, toLowerCase(word)))
             return word;
         else
