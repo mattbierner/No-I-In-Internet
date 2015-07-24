@@ -24,7 +24,7 @@ exports.replace_multiple_characters = function(test) {
 };
 
 exports.replace_multiple_characters_with_spaces = function(test) {
-    test.equal("_   __\n__", iiIii([], "a   bc\nde"));
+    test.equal("  _   __\n__ ", iiIii([], "  a   bc\nde "));
     test.done();
 };
 
@@ -36,6 +36,13 @@ exports.does_not_replace_special_character = function(test) {
 exports.does_not_replace_special_character_case_insensitive = function(test) {
     test.equal("i I i I I i", iiIii(['i'], "i I i I I i"));
     test.equal("i I i I I i", iiIii(['I'], "i I i I I i"));
+    test.done();
+};
 
+exports.special_word = function(test) {
+    test.equal("my", iiIii(['my'], "my"));
+    test.equal("___", iiIii(['my'], "mmy"));
+    test.equal("___", iiIii(['my'], "myy"));
+    test.equal("my ___ my", iiIii(['my'], "my xmy my"));
     test.done();
 };
