@@ -11,3 +11,9 @@ exports.space_returns_space = function(test) {
     test.equal("\n", iiIii([], "\n"));
     test.done();
 };
+
+exports.non_special_character_replaced = function(test) {
+    test.equal("_", iiIii([], "a"));
+    test.equal("_", iiIii([], "5"));
+    test.done();
+};
