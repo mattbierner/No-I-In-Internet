@@ -1,20 +1,17 @@
-var toLowerCase = Function.prototype.call.bind(String.prototype.toLowerCase);
-
-var contains = function(array, element) {
-    return array.indexOf(element) >= 0;
-};
+var delimiter = "$$$";
 
 /**
 */
 module.exports = function(goodWords, input) {
-    var z = goodWords.length ?
-        new RegExp('\\b((?!(' + goodWords.join('|') + ')\\b)\\w+)', "gi") :
-        /\w+/g;
-    console.log(z);
-    return input.replace(z, function(word) {
-        if (contains(goodWords, toLowerCase(word)))
-            return word;
-        else
-            return word.replace(/./g, '_');
-    });
+    return input
+        .replace(
+            new RegExp('\\b(' + goodWords.join('|') + ')\\b', 'gi'),
+            function(goodWord) {
+                return delimiter + goodWord + delimiter;
+            })
+        .split(delimiter)
+        .map(function(x, i) {
+            return i % 2 ? x : x.replace(/\w/g, '_');
+        })
+        .join('');
 };
