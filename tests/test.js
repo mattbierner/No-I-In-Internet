@@ -32,3 +32,10 @@ exports.does_not_replace_special_character = function(test) {
     test.equal("i", iiIii(['i'], "i"));
     test.done();
 };
+
+exports.does_not_replace_special_character_case_insensitive = function(test) {
+    test.equal("i I i I I i", iiIii(['i'], "i I i I I i"));
+    test.equal("i I i I I i", iiIii(['I'], "i I i I I i"));
+
+    test.done();
+};
