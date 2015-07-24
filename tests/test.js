@@ -39,6 +39,16 @@ exports.does_not_replace_special_character_case_insensitive = function(test) {
     test.done();
 };
 
+exports.does_not_replace_special_character_ignore_puctuator = function(test) {
+    test.equal("i.I,i-I!I?i'i'\"i\"", iiIii(['i'], "i.I,i-I!I?i'i'\"i\""));
+    test.done();
+};
+
+exports.does_not_replace_any_special_character = function(test) {
+    test.equal("_ b c _", iiIii(['b', 'c'], "a b c d"));
+    test.done();
+};
+
 exports.special_word = function(test) {
     test.equal("my", iiIii(['my'], "my"));
     test.equal("___", iiIii(['my'], "mmy"));
