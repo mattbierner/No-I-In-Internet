@@ -17,3 +17,13 @@ exports.non_special_character_replaced = function(test) {
     test.equal("_", iiIii([], "5"));
     test.done();
 };
+
+exports.replace_multiple_characters = function(test) {
+    test.equal("___", iiIii([], "abc"));
+    test.done();
+};
+
+exports.replace_multiple_characters_with_spaces = function(test) {
+    test.equal("_   __\n__", iiIii([], "a   bc\nde"));
+    test.done();
+};
