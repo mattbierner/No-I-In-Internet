@@ -27,3 +27,8 @@ exports.replace_multiple_characters_with_spaces = function(test) {
     test.equal("_   __\n__", iiIii([], "a   bc\nde"));
     test.done();
 };
+
+exports.does_not_replace_special_character = function(test) {
+    test.equal("i", iiIii(['i'], "i"));
+    test.done();
+};
