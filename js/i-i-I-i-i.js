@@ -2,7 +2,7 @@ var delimiter = "$$$";
 
 /**
 */
-module.exports = function(goodWords, input) {
+var iiIii = function(goodWords, input, replacement) {
     return input
         .replace(
             new RegExp('\\b(' + goodWords.sort().reverse().join('|') + ')\\b', 'gi'),
@@ -11,7 +11,12 @@ module.exports = function(goodWords, input) {
             })
         .split(delimiter)
         .map(function(x, i) {
-            return i % 2 ? x : x.replace(/\w/g, '_');
+            return i % 2 ? x : x.replace(/\w/g, (replacement || '_'));
         })
         .join('');
 };
+
+if (module)
+    module.exports = iiIii;
+else
+    window.iiIii = iiIii;
