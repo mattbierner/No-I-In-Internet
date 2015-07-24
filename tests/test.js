@@ -60,6 +60,7 @@ exports.special_word = function(test) {
 exports.special_word_with_spaces = function(test) {
     test.equal("i self", iiIii(['i self'], "i self"));
     test.equal("__ i self __", iiIii(['i self'], "my i self my"));
+    test.equal("_____", iiIii(['i self'], "iself"));
     test.equal("_ _____", iiIii(['i self'], "i xself"));
     test.equal("_ _____", iiIii(['i self'], "i selfx"));
     test.done();
@@ -67,5 +68,9 @@ exports.special_word_with_spaces = function(test) {
 
 exports.special_word_with_spaces_matches_longest = function(test) {
     test.equal("a b c", iiIii(['a b', 'a b c'], "a b c"));
+    test.equal("a b c", iiIii(['a b', 'a b c', 'a b c d'], "a b c"));
+    test.equal(
+        "a b c a b a b _ a b c d _",
+        iiIii(['a b', 'a b c', 'a b c d'], "a b c a b a b d a b c d e"));
     test.done();
 };
