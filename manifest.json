@@ -4,19 +4,37 @@
     "name": "i-i-I-i-i",
     "description": "",
     "version": "1.0",
-    
+    "permissions": ["activeTab", "storage"],
+
     "browser_action": {
         "name": "Manipulate DOM",
         "icons": ["icon.png"],
-        "default_icon": "icon.png"
+        "default_icon": {
+            "19": "icon19.png",
+            "38": "icon38.png"
+        }
     },
-    "permissions": ["activeTab"],
+    
+    "options_ui": {
+        "page": "options.html",
+        "chrome_style": true
+    },
+    
+    "background": {
+        "scripts": [
+            "defaults.js",  
+            "eventPage.js"],
+        "persistent": false
+    },
+    
     "content_scripts": [{
-        "matches": [ "http://*/*", "https://*/*"],
+        "matches": [
+            "http://*/*",
+            "https://*/*"],
         "js": [
             "jquery.min.js",
-            "i-i-I-i-i.js",
-            "background.js" ],
+            "defaults.js",
+            "contentscript.js" ],
         "css": [
             "background.css"],
         "run_at": "document_end"

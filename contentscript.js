@@ -1,9 +1,8 @@
-var narcWords = ['i', 'me', 'myself', 'my', 'twitter', 'facebook', 'instagram', 'pintrest'];
-
-var narcRegExp = new RegExp(
-    '\\b(' + narcWords.sort().reverse().join('|') + ')\\b',
-    'gi');
-
+var createWhitelistRegexp = function(whitelist) {
+    return new RegExp(
+        '\\b(' + whitelist.sort().reverse().join('|') + ')\\b',
+        'gi');
+};
 
 var toPercent = function(x) {
     return Math.round(x * 100);
@@ -21,14 +20,16 @@ var forEachTextNode = function(base, f) {
     });
 };
 
-$(function() {
-    $('p, h1, h2, h3, h4, h5, h6').each(function() {
+
+var rewritePage = function(targets, whitelist) {
+    var whitelistRegexp = createWhitelistRegexp(whitelist);
+    $(targets).each(function() {
         var total = 0;
         var reserved = 0;
         forEachTextNode($(this), function(node) {
             node.replaceWith(
-                node.text().split(narcRegExp).map(function(word) {
-                    if (word.match(narcRegExp)) {
+                node.text().split(whitelistRegexp).map(function(word) {
+                    if (word.match(whitelistRegexp)) {
                         ++reserved;
                         ++total;
                         return '<span class="iiiii-reserved-word">' + word + '</span>';
@@ -42,4 +43,12 @@ $(function() {
         });
         $(this).attr('title', toPercent(reserved / total));
     });
+};
+
+
+chrome.runtime.sendMessage({method: "getOptions"}, function(options) {
+    $(function() {
+        rewritePage(options.elements, options.whitelist);
+    });
 });
+
