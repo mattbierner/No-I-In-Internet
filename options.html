@@ -13,7 +13,7 @@
             <label for="whitelist">Good Words</label>
             <p id="whitelistHelp" class="help-block">
                 Comma separate list of words to ignore.</br>
-                Case insensitive, and regular expressions are valid.
+                Case insensitive. Can use regular expressions.
             <p>
             <input id="whitelist"
                 class="form-control"
@@ -35,13 +35,14 @@
          <div class="form-group">
             <label for="excluded-sites">Excluded Site</label>
             <p id="elementsHelp" class="help-block">
-               Sites not to process. Add a '*' at the end for wild card matching. 
+               Sites not to process. Add * as last path element to match all. 
             <p>
             <textarea id="excluded-sites"
                 class="form-control"
                 aria-describedby="elementsHelp"></textarea>
         </div>
     
+        <button id="save">save</button>
         <button id="reset">Reset</button>
     </form>
     

@@ -13,9 +13,10 @@ var DEFAULT_OPTIONS = {
 };
 
 var normalizeUrl = function(url) {
+    url = url.trim();
     url = url.replace(/^www\./, '');
-    if (url.substr(-1) === '/')
-        return url.substr(0, url.length - 1);
+    if (url.substr(-1) !== '/' && url.substr(-1) !== '*')
+        return url + '/';
     return url;
 };
 

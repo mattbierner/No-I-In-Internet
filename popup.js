@@ -1,20 +1,32 @@
 /**
+    Send a message to the active tab.
+*/
+var sendMessage = function(msg, response) {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, msg, response);
+    });
+};
+
+/**
     Toggle the content script on or off.
 */
 var toggleContentScript = function() {
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(
-            tabs[0].id,
-            {method: "toggle"},
-            function() { });
-    });
+    sendMessage({method: "toggle"});
 };
+
 
 /**
     Toggle the effect on or off.
 */
 var toggle = function() {
     toggleContentScript();
+};
+
+/**
+    Disable the content script for the current page.
+*/
+var disable = function() {
+    sendMessage({method: "disable"});
 };
 
 /**
@@ -27,7 +39,7 @@ var getUrl = function(fullUrl) {
 };
 
 /**
-    
+    Add a site to the exclusion list.
 */
 var addExcludedSite = function(site) {
     var key = normalizeUrl(site);
@@ -47,6 +59,7 @@ var disableSite = function() {
         var url = getUrl(tabs[0].url)
         addExcludedSite(url.hostname + '/*');
     });
+    disable();
 };
 
 /**
@@ -57,6 +70,7 @@ var disablePage = function() {
         var url = getUrl(tabs[0].url);
         addExcludedSite(url.hostname + url.pathname);
     });
+    disable();
 };
 
 
