@@ -3,7 +3,7 @@
 
     "name": "i i I i i",
     "description": "There's no 'I' in 'internet'.",
-    "version": "1.0",
+    "version": "0.0",
     "icons": {
         "48": "icon48.png",
         "128": "icon128.png" },
@@ -19,13 +19,13 @@
     },
     
     "options_ui": {
-        "page": "options.html",
+        "page": "options/options.html",
         "chrome_style": true
     },
     
     "background": {
         "scripts": [
-            "defaults.js",  
+            "js/defaults.js",  
             "eventPage.js"],
         "persistent": false
     },
@@ -35,11 +35,11 @@
             "http://*/*",
             "https://*/*"],
         "js": [
-            "jquery.min.js",
-            "defaults.js",
-            "contentscript.js" ],
+            "js/jquery.min.js",
+            "js/defaults.js",
+            "contentScript/contentScript.js" ],
         "css": [
-            "contentscript.css"],
+            "contentScript/contentScript.css"],
         "run_at": "document_end"
     }]
 }
