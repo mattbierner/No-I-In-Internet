@@ -4,6 +4,9 @@
     "name": "i-i-I-i-i",
     "description": "",
     "version": "1.0",
+    "icons": {
+        "48": "icon48.png",
+        "128": "icon128.png" },
     "permissions": ["activeTab", "storage"],
 
     "browser_action": {

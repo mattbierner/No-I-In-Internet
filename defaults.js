@@ -1,7 +1,7 @@
 var DEFAULT_OPTIONS = {
     'whitelist': [
         'i', 'me', 'myself', 'my', 'mine',
-        "i\\'m", "i\\'ll", "i\\'ve",
+        "i'm", "i'll", "i've",
         'we', 'us', 'ours', 'ourself', 'ourselves', 'us',
         'twitter', 'tweet', 'tweets', 'facebook',
         'instagram', 'instagrams', 'selfie'],
