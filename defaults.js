@@ -6,10 +6,23 @@ var DEFAULT_OPTIONS = {
         'twitter', 'tweet', 'tweets', 'facebook',
         'instagram', 'instagrams', 'selfie'],
         
-    'elements': 'p, h1, h2, h3, h4, h5, h6, article ul, article ol' 
+    'elements': 'p, h1, h2, h3, h4, h5, h6, article ul, article ol',
+    
+    'excludedSites': [
+        'stackoverflow.com/*']
 };
 
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
+var normalizeUrl = function(url) {
+    url = url.replace(/^www\./, '');
+    if (url.substr(-1) === '/')
+        return url.substr(0, url.length - 1);
+    return url;
+};
+
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.DEFAULT_OPTIONS = DEFAULT_OPTIONS;
-else
+    module.normalizeUrl = normalizeUrl;
+} else {
     window.DEFAULT_OPTIONS = DEFAULT_OPTIONS;
+    window.normalizeUrl = normalizeUrl;
+}
