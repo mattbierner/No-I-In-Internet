@@ -45,10 +45,27 @@ var rewritePage = function(targets, whitelist) {
     });
 };
 
+/**
+    List for events from popup
+*/
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    switch(request.method) {
+    case 'toggle':
+        $('body').toggleClass('iiiii-override');
+        sendResponse({});
+        break;
+        
+    default:
+        sendResponse({});
+        break;
+    }
+});
+
+
+
 
 chrome.runtime.sendMessage({method: "getOptions"}, function(options) {
     $(function() {
         rewritePage(options.elements, options.whitelist);
     });
 });
-

@@ -6,7 +6,7 @@ var DEFAULT_OPTIONS = {
         'twitter', 'tweet', 'tweets', 'facebook',
         'instagram', 'instagrams', 'selfie'],
         
-    'elements': 'p, h1, h2, h3, h4, h5, h6' 
+    'elements': 'p, h1, h2, h3, h4, h5, h6, article ul, article ol' 
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')

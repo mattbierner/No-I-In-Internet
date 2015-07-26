@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
 
-    "name": "i-i-I-i-i",
+    "name": "i i I i i",
     "description": "",
     "version": "1.0",
     "icons": {
@@ -10,12 +10,12 @@
     "permissions": ["activeTab", "storage"],
 
     "browser_action": {
-        "name": "Manipulate DOM",
         "icons": ["icon.png"],
         "default_icon": {
             "19": "icon19.png",
             "38": "icon38.png"
-        }
+        },
+        "default_popup": "popup.html"
     },
     
     "options_ui": {
@@ -39,7 +39,7 @@
             "defaults.js",
             "contentscript.js" ],
         "css": [
-            "background.css"],
+            "contentscript.css"],
         "run_at": "document_end"
     }]
 }

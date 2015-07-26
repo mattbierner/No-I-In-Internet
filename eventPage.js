@@ -3,10 +3,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     case 'getOptions':
         chrome.storage.sync.get(DEFAULT_OPTIONS, sendResponse);
         return true;
-    
-    default:
-        sendResponse({});
-        break;
     }
 });
 

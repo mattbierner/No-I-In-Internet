@@ -10,12 +10,18 @@
 
 .iiiii-word-inner {
     color: transparent;
+    text-shadow: none;
 }
 
+.iiiii-override .iiiii-word,
 .iiiii-word:hover {
     text-decoration: inherit;
 }
 
+.iiiii-override .iiiii-word-inner,
 .iiiii-word:hover .iiiii-word-inner {
     color: inherit;
+    text-shadow: inherit;
 }
+
+
