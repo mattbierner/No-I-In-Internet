@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
 
-    "name": "i i I i i",
-    "description": "There's no 'I' in 'internet'.",
-    "version": "0.0",
+    "name": "No I in Internet",
+    "description": "There is no I in Internet.",
+    "version": "1.0",
     "icons": {
         "48": "icon48.png",
         "128": "icon128.png" },
@@ -15,7 +15,7 @@
             "19": "icon19.png",
             "38": "icon38.png"
         },
-        "default_popup": "popup.html"
+        "default_popup": "popup/popup.html"
     },
     
     "options_ui": {
