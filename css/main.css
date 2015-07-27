@@ -1,0 +1,107 @@
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #444;
+}
+
+.ul {
+    text-decoration: underline;
+}
+
+blockquote {
+    position: relative;
+    width: 100%;
+    border: none;
+}
+
+blockquote:before {
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -5000%;
+    width: 10000%;
+    height: 100%;
+    background: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    z-index: -1;
+}
+
+/* Page Header
+ -----------------------------------------------------------------------------*/
+#header {
+    position: relative;
+    height: 60%;
+    background-color: #663399;
+    background-image: url("../img/i.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+}
+
+#header .container {
+    height: 100%;
+    display: table;
+}
+
+#header h1 {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;    
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    font-weight: 300;
+    word-spacing: 0.05em;
+}
+
+#header h1 span {
+    display: inline-block;
+    text-align: center;
+}
+
+#header #title-left {
+    text-align: right;
+    padding-right: 16vh;
+}
+
+#header #title-right {
+    text-align: left;
+    padding-left: 16vh;
+}
+
+/* Article Header
+ -----------------------------------------------------------------------------*/
+
+article h2,
+article h3,
+article h4 {
+margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+article img {
+    max-width: 100%;
+    margin-bottom: -3em;
+}
+
+article section {
+    position: relative;
+}
+
+article section:before {
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -5000%;
+    width: 10000%;
+    border-top: 1px solid #e3e3e3;
+    z-index: -1;
+}
