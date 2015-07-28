@@ -126,7 +126,7 @@ a:hover {
 /* Article
  -----------------------------------------------------------------------------*/
 article {
-    margin-top: 1.4em;
+    margin-top: 0.4em;
     font-family: 'Coming Soon', cursive;
 }
 
@@ -155,7 +155,7 @@ article img.screenshot {
 }
 
 article section,
-body footer {
+#page-footer {
     padding-top: 3rem;
     margin-top: 3rem;
     border-top: 1px solid #e3e3e3;
@@ -208,4 +208,32 @@ body footer {
 .iiiii-word:hover .iiiii-word-inner {
     color: inherit;
     text-shadow: inherit;
+}
+
+@media (max-height: 600px) {
+    article {
+        margin-top: 0;
+    }
+    
+    article h2,
+    article h3 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    article h4 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media (min-height: 900px) {
+    #header #title-left {
+        padding-right: 150px;
+    }
+
+    #header #title-right {
+        padding-left: 150px;
+    }
 }
