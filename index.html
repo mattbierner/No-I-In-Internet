@@ -11,7 +11,6 @@
     <title>There is no I in Internet</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link href="css/main.css" rel="stylesheet">
 </head>
 
@@ -32,12 +31,12 @@
             <h4>because</h4>
             <h2 style="font-family: 'Kaushan Script', cursive;">I AM THE GREATEST</h2>
             
-            <img src="img/greatest-people.png" />
+            <img class="screenshot" src="img/greatest-people.png" />
             
             <h4>But the internet has many words</h4>
             <h2 style="font-family: 'Anton', serif;">not about me!!!</h2>
             <h4>Just look at this nonsense</h4>
-            <blockquote>
+            <blockquote class="fullwidth-bar">
                 <p class="container">
                 Last July, I sat at my desk in my Toronto apartment and made my case for an American company to hire me.
                 </p>
@@ -48,34 +47,65 @@
             <h4>July?</h4>
             <h4>Apartment?</h4>
             <h4>Desk?</h4>
-            <h2 style="margin-bottom: 2em; font-family: 'Kaushan Script', serif;"><span class="multiunderline">Fuck that shit</span></h2>
+            <h2 style="margin-bottom: 2em; font-family: 'Kaushan Script', serif;"><span class="multiunderline">BFD</span></h2>
             
-            <h4>That's why <b>I</b> built a Chrome plugging to show <b>just</b> the important stuff.</h4>
-            <blockquote>
+            <h4>That's why <b>I</b> built a Chrome plug-in to show <b>just the important stuff.</b></h4>
+            <blockquote class="fullwidth-bar">
                 <p>
                     ____ ____, I ___ __ my ____ __ my ______ _________ ___ ____ my ____ ___ __ ________ _______ __ ____ me.
                 </p>
+                <footer>
+                    <a href="http://mobile.nytimes.com/2015/07/20/magazine/what-my-landlord-learned-about-me-from-twitter.html">NYT Magazine, What My Landlord Learned About Me From Twitter</a>
+                </footer>
             </blockquote>
             
             <div class="row">
                 <div class="col-md-6">
-                    <a href="http://mobile.nytimes.com/2015/07/20/magazine/what-my-landlord-learned-about-me-from-twitter.html">
-                        <img src="img/before.png" />
-                    </a>
                     <h4>Transform <i>this</i></h4>
+                    <a href="http://mobile.nytimes.com/2015/07/20/magazine/what-my-landlord-learned-about-me-from-twitter.html">
+                        <img class="screenshot" src="img/before.png" />
+                    </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="http://mobile.nytimes.com/2015/07/20/magazine/what-my-landlord-learned-about-me-from-twitter.html">
-                        <img src="img/after.png" />
-                    </a>
                     <h4>Into <i>this</i></h4>
+                    <a href="http://mobile.nytimes.com/2015/07/20/magazine/what-my-landlord-learned-about-me-from-twitter.html">
+                        <img class="screenshot" src="img/after.png" />
+                    </a>
                 </div>
             </div>
         </header>
         
         <section>
-            <h1>How do I Use It?</h1>
-            
+            <h1>How?</h1>
+            <h4>Step One</h4>
+            <p>Install extension from Chrome Web Store.</p>
+            <a href="zttp://mattbierner.com">
+                <img src="img/chrome.svg" />
+            </a>
+            <h4>Step Two</h4>
+            <p>There is no step two.</p>
+        </section>
+        
+        <section id="example">
+            <h1>Example?</h1>
+            <h4>Good Words</h4>
+            <p><i>i, me, myself, my, mine, i'm, i'll, i've, we, us, ours, ourself, ourselves, us, twitter, tweet, tweets, facebook, instagram, instagrams, selfie</i></p>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                    <h4>Input here</h4>
+                    <textarea placeholder="...">
+I am he as you are he as you are me
+And we are all together
+See how they run like pigs from a gun
+See how they fly
+I'm crying
+                    </textarea>
+                </div>
+                <div class="col-md-4">
+                    <h4>Output here</h4>
+                    <p id="example-out"></p>
+                </div>
+            </div>
         </section>
     </article>
     
@@ -94,8 +124,8 @@
     </footer>
 
     <script src="js/jquery.js"></script>
-
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
