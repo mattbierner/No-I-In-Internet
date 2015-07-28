@@ -1,12 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Anton|Kaushan+Script|Amatic+SC|Coming+Soon);
+
 html, body {
     height: 100%;
     overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
 }
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
     color: #444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
 }
 
 .ul {
@@ -32,11 +43,47 @@ blockquote:before {
     z-index: -1;
 }
 
+a {
+    color: #0091ff;
+}
+
+a:hover {
+    color: #0091ff;
+}
+
+/* Multiple underline
+ -----------------------------------------------------------------------------*/
+.multiunderline {
+    padding: 0 0.2em;
+    position: relative;
+    border-bottom: 2px solid #444;
+}
+
+.multiunderline:before,
+.multiunderline:after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    margin-left: -45%;
+    top: 8px;
+    width: 90%;
+    height: 100%;
+    border-bottom: inherit;
+}
+
+.multiunderline:after {
+    top: 14px;
+    width: 80%;
+    margin-left: -40%;
+    border-bottom: inherit;
+}
+
 /* Page Header
  -----------------------------------------------------------------------------*/
 #header {
     position: relative;
     height: 60%;
+    max-height: 600px;
     background-color: #663399;
     background-image: url("../img/i.svg");
     background-size: 100% 100%;
@@ -45,7 +92,7 @@ blockquote:before {
     color: white;
 }
 
-#header .container {
+#header #logo {
     height: 100%;
     display: table;
 }
@@ -56,11 +103,11 @@ blockquote:before {
     width: 50%;    
     margin: 0;
     padding: 0;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 300;
     word-spacing: 0.05em;
+    font-family: 'Amatic SC', cursive;
 }
-
 #header h1 span {
     display: inline-block;
     text-align: center;
@@ -76,14 +123,27 @@ blockquote:before {
     padding-left: 16vh;
 }
 
-/* Article Header
+/* Article
  -----------------------------------------------------------------------------*/
+article {
+    margin-top: 1.4em;
+}
 
 article h2,
 article h3,
 article h4 {
-margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-family: 'Coming Soon', cursive;
+}
+
+article h2,
+article h3 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+article h4 {
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
 }
 
 article img {
@@ -104,4 +164,16 @@ article section:before {
     width: 10000%;
     border-top: 1px solid #e3e3e3;
     z-index: -1;
+}
+
+/* footer
+ -----------------------------------------------------------------------------*/
+#page-footer {
+    max-width: 60em;
+    margin-top: 1em;
+    margin-bottom: 4em;
+} 
+
+#page-footer a {
+    color: inherit;
 }
