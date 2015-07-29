@@ -183,6 +183,10 @@ article section,
     color: inherit;
 }
 
+#page-footer nav {
+    padding-bottom: 1.6em;
+}
+
 /* iiIii
  -----------------------------------------------------------------------------*/
 #example  .iiiii-reserved-word {
