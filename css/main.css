@@ -86,7 +86,7 @@ a:hover {
     max-height: 600px;
     background-color: #663399;
     background-image: url("../img/i.svg");
-    background-size: 100% 100%;
+    background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center center;
     color: white;
@@ -168,6 +168,7 @@ article section,
     width: 100%;
     min-height: 100px;
 }
+
 
 /* footer
  -----------------------------------------------------------------------------*/
